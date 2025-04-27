@@ -1,0 +1,11 @@
+{
+  "name": "waiterapp",
+  "description": "This is a monorepo to waiter app",
+  "version": "0.0.0",
+  "scripts": {
+    "build:api": "pnpm --filter @waiterapp/api run build",
+    "start:api": "pnpm --filter @waiterapp/api run start",
+    "dev:api": "pnpm --filter @waiterapp/api run dev"
+  },
+  "author": "@gabrielcaiana"
+}

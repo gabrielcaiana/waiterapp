@@ -7,8 +7,8 @@ import {
 
 const router = Router();
 
-router.get('/categories', getCategories);
-router.post('/categories', createCategory);
-router.get('/categories/:categoryId/products', getProductsByCategory);
+router.get('/', getCategories);
+router.post('/', createCategory);
+router.get('/:categoryId/products', getProductsByCategory);
 
 export default router;

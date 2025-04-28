@@ -7,13 +7,13 @@ export const Category = model(
       type: String,
       required: true,
       maxlength: 64,
-      minlength: 3,
+      minlength: 1,
     },
     icon: {
       type: String,
       required: true,
       maxlength: 255,
-      minlength: 3,
+      minlength: 1,
     },
   }),
 );

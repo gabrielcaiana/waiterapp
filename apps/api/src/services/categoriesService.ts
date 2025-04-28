@@ -6,9 +6,6 @@ export class CategoriesService {
 
   async getAllCategories() {
     const categories = await this.repository.getAll();
-    if (!categories || categories.length === 0) {
-      throw new NotFoundError('No categories found');
-    }
     return categories;
   }
 

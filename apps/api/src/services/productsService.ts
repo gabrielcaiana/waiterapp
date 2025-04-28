@@ -1,5 +1,6 @@
 import { productsRepository } from '@/repositories/productsRepository';
 import { NotFoundError, BadRequestError } from '@/errors';
+import { ProductEntity } from '@/entities/Product';
 
 export class ProductsService {
   private repository = new productsRepository();
@@ -19,22 +20,22 @@ export class ProductsService {
     return products;
   }
 
-  async createProduct(
-    name: string,
-    category: string,
-    description: string,
-    imagePath: string,
-    ingredients: string,
-    price: number,
-  ) {
-    const product = await this.repository.create(
+  async createProduct({
+    name,
+    description,
+    category,
+    imagePath,
+    ingredients,
+    price,
+  }: ProductEntity) {
+    const product = await this.repository.create({
       name,
-      category,
       description,
+      category,
       imagePath,
       ingredients,
       price,
-    );
+    });
     if (!product) {
       throw new BadRequestError('Error creating product');
     }

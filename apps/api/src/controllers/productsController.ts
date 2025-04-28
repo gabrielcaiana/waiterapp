@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ProductsService } from '@/services/productsService';
+import { productSchema } from '@/schemas/productSchema';
 
 const productsService = new ProductsService();
 
@@ -39,15 +40,16 @@ export const createProduct = async (
 ) => {
   try {
     const { name, description, price, imagePath, ingredients, category } =
-      req.body;
-    const product = await productsService.createProduct(
+      productSchema.parse(req.body);
+
+    const product = await productsService.createProduct({
       name,
       description,
-      imagePath,
       price,
+      imagePath,
       ingredients,
       category,
-    );
+    });
     res.status(201).json(product);
   } catch (error) {
     next(error);

@@ -12,4 +12,4 @@ app.use('/api/items', itemRoutes);
 // Global error handler (should be after routes)
 app.use(errorHandler);
 
-export default app;
+export { app };

@@ -1,3 +1,4 @@
+import { CategoryEntity } from './../entities/Category';
 import { Category } from '@/models/Category';
 
 export class categoriesRepository {
@@ -16,7 +17,7 @@ export class categoriesRepository {
     });
     return categories;
   }
-  async create(name: string, icon: string) {
+  async create({ name, icon }: CategoryEntity) {
     const category = await Category.create({
       name,
       icon,

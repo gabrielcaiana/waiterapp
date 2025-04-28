@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { CategoriesService } from '@/services/categoriesService';
+import { createCategorySchema } from '@/schemas/categorySchema';
 
 const categoriesService = new CategoriesService();
 
@@ -22,8 +23,11 @@ export const createCategory = async (
   next: NextFunction,
 ) => {
   try {
-    const { name, icon } = req.body;
-    const category = await categoriesService.createCategory(name, icon);
+    const { name, icon } = createCategorySchema.parse(req.body);
+    const category = await categoriesService.createCategory({
+      name,
+      icon,
+    });
     res.status(201).json(category);
   } catch (error) {
     next(error);

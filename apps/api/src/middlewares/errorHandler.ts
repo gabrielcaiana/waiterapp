@@ -6,23 +6,25 @@ export function errorHandler(
   req: Request,
   res: Response,
   next: NextFunction,
-) {
+): void {
   console.error(err);
 
   if (err instanceof ZodError) {
-    return res.status(400).json({
+    res.status(400).json({
       error: 'Validation failed',
       issues: err.errors.map((e) => ({
         field: e.path.join('.'),
         message: e.message,
       })),
     });
+    return;
   }
 
   if (err.statusCode) {
-    return res.status(err.statusCode).json({
+    res.status(err.statusCode).json({
       error: err.message,
     });
+    return;
   }
 
   res.status(500).json({

@@ -3,9 +3,13 @@
   "description": "This is a monorepo to waiter app",
   "version": "0.0.0",
   "scripts": {
-    "build:api": "pnpm --filter @waiterapp/api run build",
-    "start:api": "pnpm --filter @waiterapp/api run start",
-    "dev:api": "pnpm --filter @waiterapp/api run dev"
+    "api:build": "nx build @waiterapp/api",
+    "api:start": "nx serve @waiterapp/api",
+    "api:dev": "nx dev @waiterapp/api --watch",
+    "nx:graph": "nx graph"
   },
-  "author": "@gabrielcaiana"
+  "author": "@gabrielcaiana",
+  "devDependencies": {
+    "nx": "^20.8.1"
+  }
 }

@@ -20,7 +20,11 @@ export const getItems = (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-export const getItemById = (req: Request, res: Response, next: NextFunction) => {
+export const getItemById = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
     const id = parseInt(req.params.id, 10);
     const item = items.find((i) => i.id === id);

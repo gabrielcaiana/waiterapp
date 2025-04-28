@@ -1,0 +1,55 @@
+import { Request, Response, NextFunction } from 'express';
+import { ProductsService } from '@/services/productsService';
+
+const productsService = new ProductsService();
+
+export const getProducts = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const products = await productsService.getAllProducts();
+    res.status(200).json(products);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getProductByCategoryId = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const { categoryId } = req.params;
+    const products = await productsService.getProductByCategoryId(
+      Number(categoryId),
+    );
+    res.status(200).json(products);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const createProduct = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const { name, description, price, imagePath, ingredients, category } =
+      req.body;
+    const product = await productsService.createProduct(
+      name,
+      description,
+      imagePath,
+      price,
+      ingredients,
+      category,
+    );
+    res.status(201).json(product);
+  } catch (error) {
+    next(error);
+  }
+};

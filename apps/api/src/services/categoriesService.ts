@@ -10,6 +10,11 @@ export class CategoriesService {
     return categories;
   }
 
+  async getProdutByCategoryId(categoryId: string) {
+    const products = await this.repository.getProductByCategoryId(categoryId);
+    return products;
+  }
+
   async createCategory({ name, icon }: CategoryEntity) {
     const category = await this.repository.create({
       name,

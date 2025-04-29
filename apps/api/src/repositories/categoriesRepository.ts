@@ -1,4 +1,5 @@
 import { CategoryEntity } from './../entities/Category';
+import { Product } from '@/models/Product';
 import { Category } from '@/models/Category';
 
 export class categoriesRepository {
@@ -6,15 +7,10 @@ export class categoriesRepository {
     const categories = await Category.find();
     return categories;
   }
-  async getProductByCategoryId(categoryId: number) {
-    const categories = await Category.find({
-      where: {
-        id: categoryId,
-      },
-      relations: {
-        products: true,
-      },
-    });
+  async getProductByCategoryId(categoryId: string) {
+    const categories = await Product.find()
+      .where('category')
+      .equals(categoryId);
     return categories;
   }
   async create({ name, icon }: CategoryEntity) {

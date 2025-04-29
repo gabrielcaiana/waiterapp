@@ -16,22 +16,6 @@ export const getProducts = async (
   }
 };
 
-export const getProductByCategoryId = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
-  try {
-    const { categoryId } = req.params;
-    const products = await productsService.getProductByCategoryId(
-      Number(categoryId),
-    );
-    res.status(200).json(products);
-  } catch (error) {
-    next(error);
-  }
-};
-
 export const createProduct = async (
   req: Request,
   res: Response,
@@ -45,7 +29,7 @@ export const createProduct = async (
       name,
       description,
       price: Number(price),
-      ingredients: JSON.parse(ingredients),
+      ingredients: ingredients ? JSON.parse(ingredients) : [],
       category,
       imagePath,
     };

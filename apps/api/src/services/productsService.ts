@@ -10,16 +10,6 @@ export class ProductsService {
     return products;
   }
 
-  async getProductByCategoryId(categoryId: number) {
-    const products = await this.repository.getProductByCategoryId(categoryId);
-    if (!products || products.length === 0) {
-      throw new NotFoundError(
-        `No products found for this category id: ${categoryId}`,
-      );
-    }
-    return products;
-  }
-
   async createProduct({
     name,
     description,

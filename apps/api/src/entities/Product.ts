@@ -9,6 +9,6 @@ export interface ProductEntity {
   description: string;
   imagePath: string;
   price: number;
-  ingredients: IngredientEntity[];
+  ingredients?: IngredientEntity[];
   category: string;
 }

@@ -6,17 +6,7 @@ export class productsRepository {
     const products = await Product.find();
     return products;
   }
-  async getProductByCategoryId(categoryId: number) {
-    const products = await Product.find({
-      where: {
-        id: categoryId,
-      },
-      relations: {
-        products: true,
-      },
-    });
-    return products;
-  }
+
   async create({
     name,
     category,

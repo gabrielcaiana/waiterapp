@@ -12,7 +12,7 @@ export const productSchema = z.object({
         icon: z.string().min(1, 'Ingredient icon is required'),
       }),
     )
-    .min(1, 'At least one ingredient is required'),
+    .optional(),
   category: z.string().min(1, 'Category is required'),
 });
 

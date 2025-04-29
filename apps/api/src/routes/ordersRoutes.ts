@@ -8,9 +8,9 @@ import {
 
 const router = Router();
 
-router.get('/orders', getOrders);
-router.post('/orders', createOrder);
-router.patch('/orders/:orderId', updateOrderById);
-router.delete('/orders/:orderId', deleteOrderById);
+router.get('/', getOrders);
+router.post('/', createOrder);
+router.patch('/:orderId', updateOrderById);
+router.delete('/:orderId', deleteOrderById);
 
 export default router;

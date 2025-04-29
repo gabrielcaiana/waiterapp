@@ -17,6 +17,7 @@ export function errorHandler(
       });
     }
     res.status(400).json({ error: err.message });
+    return;
   }
 
   if (err instanceof ZodError) {

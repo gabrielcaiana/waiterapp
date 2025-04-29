@@ -1,5 +1,5 @@
 import { productsRepository } from '@/repositories/productsRepository';
-import { NotFoundError, BadRequestError } from '@/errors';
+import { BadRequestError } from '@/errors';
 import { ProductEntity } from '@/entities/Product';
 
 export class ProductsService {

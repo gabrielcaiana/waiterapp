@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ProductsService } from '@/services/productsService';
 import { productSchema } from '@/schemas/productSchema';
-
 const productsService = new ProductsService();
 
 export const getProducts = async (
@@ -39,17 +38,21 @@ export const createProduct = async (
   next: NextFunction,
 ) => {
   try {
-    const { name, description, price, imagePath, ingredients, category } =
-      productSchema.parse(req.body);
+    const { name, description, price, ingredients, category } = req.body;
+    const imagePath = (req.file as any)?.location || '';
 
-    const product = await productsService.createProduct({
+    const payload = {
       name,
       description,
-      price,
-      imagePath,
-      ingredients,
+      price: Number(price),
+      ingredients: JSON.parse(ingredients),
       category,
-    });
+      imagePath,
+    };
+
+    const validatedProduct = productSchema.parse(payload);
+    const product = await productsService.createProduct(validatedProduct);
+
     res.status(201).json(product);
   } catch (error) {
     next(error);

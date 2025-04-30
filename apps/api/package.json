@@ -9,7 +9,12 @@
     "dev": "tsx watch src/server.ts",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\"",
+    "compose": "docker-compose up",
+    "compose:down": "docker-compose down",
+    "compose:build": "docker-compose up build -d",
+    "docker:build": "docker build -t waiterapp .",
+    "docker:run": "docker run -p 3333:3333 -d waiterapp-api"
   },
   "keywords": [],
   "author": "",

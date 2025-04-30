@@ -1,0 +1,18 @@
+meta {
+  name: Create Categories copy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseURL}}/categories
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Pizzas",
+    "icon": "pizza"
+  }
+}

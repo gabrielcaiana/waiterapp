@@ -2,18 +2,24 @@ FROM node:22.15.0-alpine
 
 WORKDIR /usr/src/app
 
-COPY ../../package.json ../../pnpm-workspace.yaml ../../pnpm-lock.yaml ./
-COPY ../../packages ./packages
-COPY ./package.json ./apps/api/
+# Instalar pnpm e tsx globalmente
+RUN npm install -g pnpm tsx
 
-RUN npm install -g pnpm && pnpm install
+# Copiar todos os arquivos de configuração do workspace
+COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
+COPY packages ./packages
+COPY apps ./apps
+COPY libs ./libs
 
-COPY . ./apps/api/
+# Instalar todas as dependências do workspace
+RUN pnpm install
 
-WORKDIR /usr/src/app
-RUN pnpm api:build
-
+# Mudar para o diretório da API
 WORKDIR /usr/src/app/apps/api
+
+# Construir o projeto
+RUN pnpm build
+
 EXPOSE 3333
 
-CMD ["pnpm", "start"]
+CMD ["tsx", "src/server.ts"]

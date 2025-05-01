@@ -5,7 +5,7 @@ export async function connectToDatabase() {
   const uri = process.env.MONGODB_URI;
 
   if (!uri) {
-    console.error('❌ MONGO_URI not found');
+    logger.error('❌ MONGO_URI not found');
     process.exit(1);
   }
 

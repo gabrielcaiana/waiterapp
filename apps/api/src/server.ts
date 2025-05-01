@@ -5,6 +5,8 @@ import { logger } from '@/logger/index';
 
 async function startServer() {
   try {
+    logger.info('⏳ connecting to database...');
+    
     await connectToDatabase();
 
     app.listen(config.port, () => {

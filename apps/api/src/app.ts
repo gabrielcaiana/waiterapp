@@ -9,6 +9,9 @@ const app = express();
 
 app.use(express.json());
 
+// Global middleware
+app.use(requestLogger);
+
 // Routes
 app.use('/api/categories', categoriesRoutes);
 app.use('/api/products', productsRoutes);
@@ -16,6 +19,5 @@ app.use('/api/orders', orderRoutes);
 
 // Global error handler (should be after routes)
 app.use(errorHandler);
-app.use(requestLogger);
 
 export { app };

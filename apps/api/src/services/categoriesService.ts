@@ -1,6 +1,6 @@
 import { CategoryEntity } from './../entities/Category';
 import { categoriesRepository } from '@/repositories/categoriesRepository';
-import { NotFoundError, BadRequestError } from '@/errors';
+import { BadRequestError } from '@/errors';
 
 export class CategoriesService {
   private repository = new categoriesRepository();

@@ -1,6 +1,18 @@
 # WaiterApp 🍽️
 
-Um sistema completo para gerenciamento de pedidos em restaurantes, desenvolvido como um monorepo contendo aplicações web, mobile e API.
+Um sistema completo para gerenciamento de pedidos em restaurantes, desenvolvido como um monorepo contendo aplicações web, mobile e API. Este projeto foi criado como material didático para treinamento de equipes full stack.
+
+## 🎓 Sobre o Treinamento
+
+Este projeto é utilizado como base para treinamento de equipes full stack, abordando:
+
+- Arquitetura de Monorepo com NX
+- Desenvolvimento Backend com Node.js
+- Desenvolvimento Frontend com React
+- Desenvolvimento Mobile com React Native
+- Integração com MongoDB
+- Containerização com Docker
+- CI/CD e Boas Práticas
 
 ## 📦 Estrutura do Projeto
 
@@ -18,6 +30,11 @@ Este projeto é organizado como um monorepo usando NX, contendo as seguintes apl
 - **Backend**: Node.js
 - **Banco de Dados**: MongoDB
 - **Containerização**: Docker
+- **Frontend**: React
+- **Mobile**: React Native
+- **Testes**: Jest
+- **Linting**: ESLint
+- **Formatação**: Prettier
 
 ## 🚀 Começando
 
@@ -26,6 +43,7 @@ Este projeto é organizado como um monorepo usando NX, contendo as seguintes apl
 - Node.js
 - pnpm
 - Docker e Docker Compose
+- Git
 
 ### Instalação
 
@@ -70,8 +88,18 @@ docker-compose up -d
 ## 📚 Documentação
 
 - [Documentação da API](./apps/api/readme.md)
+- [Guia de Treinamento](./docs/training.md)
 - Documentação Web (em breve)
 - Documentação Mobile (em breve)
+
+## 🎯 Objetivos do Treinamento
+
+- Compreender a arquitetura de monorepo e suas vantagens
+- Aprender boas práticas de desenvolvimento full stack
+- Entender integração entre diferentes tecnologias
+- Desenvolver habilidades em containerização
+- Aprender a trabalhar com banco de dados NoSQL
+- Compreender o fluxo de desenvolvimento em equipe
 
 ## 🤝 Contribuindo
 

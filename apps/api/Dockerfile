@@ -4,19 +4,27 @@ WORKDIR /usr/src/app
 
 RUN npm install -g pnpm
 
+# Copia os arquivos de configuração do workspace
 COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
 
+# Copia o pacote models primeiro
+COPY packages/models ./packages/models
+
+# Copia a API
 COPY apps/api ./apps/api
 
-RUN pnpm install --no-frozen-lockfile
+# Instala todas as dependências do workspace
+RUN pnpm install
 
+# Compila o pacote models
 WORKDIR /usr/src/app/packages/models
 RUN pnpm build
 
+# Compila a API
 WORKDIR /usr/src/app/apps/api
-
 RUN pnpm build
 
+# Segunda etapa
 FROM node:22.15.0-alpine
 
 WORKDIR /usr/src/app
@@ -48,4 +56,3 @@ RUN pnpm install
 EXPOSE 3333
 
 CMD ["pnpm", "start"]
-  

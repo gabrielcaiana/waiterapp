@@ -2,7 +2,7 @@
 
 Api for waiterapp.
 
-### build docker 
+### build docker
 
 ```
 export const dockerbuild = `
@@ -18,3 +18,17 @@ docker build \
   -t waiterapp-api .
 `
 ```
+
+### Run docker image (with mongo network name)
+
+docker run -d \
+ --network api_waiter-network \
+ -p 3333:3333 \
+ -e PORT=3333 \
+ -e NODE_ENV=development \
+ -e MONGODB_URI=mongodb://root:root@mongo:27017/admin \
+ -e AWS_ACCESS_KEY_ID=... \
+ -e AWS_SECRET_ACCESS_KEY=... \
+ -e AWS_REGION=us-east-1 \
+ -e AWS_BUCKET_NAME=waiterapp-application \
+ waiterapp-api

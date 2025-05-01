@@ -23,7 +23,7 @@ export const createProduct = async (
 ) => {
   try {
     const { name, description, price, ingredients, category } = req.body;
-    const imagePath = (req.file as any)?.location || '';
+    const imagePath = (req.file as Express.Multer.File)?.path || '';
 
     const payload = {
       name,

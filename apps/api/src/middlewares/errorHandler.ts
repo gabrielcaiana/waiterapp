@@ -1,14 +1,15 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 import multer from 'multer';
+import { logger } from '@/logger';
 import { ZodError } from 'zod';
+import { CustomError } from '@/types/AppError';
 
 export function errorHandler(
-  err: any,
+  err: CustomError,
   req: Request,
   res: Response,
-  next: NextFunction,
 ): void {
-  console.error(err);
+  logger.error(err);
 
   if (err instanceof multer.MulterError) {
     if (err.code === 'LIMIT_FILE_SIZE') {

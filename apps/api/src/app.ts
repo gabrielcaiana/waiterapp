@@ -3,6 +3,7 @@ import categoriesRoutes from '@/routes/categoriesRoutes';
 import productsRoutes from '@/routes/productsRoutes';
 import orderRoutes from '@/routes/ordersRoutes';
 import { errorHandler } from '@/middlewares/errorHandler';
+import { requestLogger } from '@/middlewares/requestLogger';
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.use('/api/orders', orderRoutes);
 
 // Global error handler (should be after routes)
 app.use(errorHandler);
+app.use(requestLogger);
 
 export { app };

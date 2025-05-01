@@ -6,7 +6,9 @@
     "api:build": "nx build @waiterapp/api",
     "api:start": "nx serve @waiterapp/api",
     "api:dev": "nx dev @waiterapp/api --watch",
-    "nx:graph": "nx graph"
+    "nx:graph": "nx graph",
+    "docker:clean": "docker system prune -a --volumes -f",
+    "docker:clean:safe": "docker system prune -a --volumes"
   },
   "author": "@gabrielcaiana",
   "devDependencies": {

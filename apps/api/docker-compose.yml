@@ -14,22 +14,22 @@ services:
       - waiter-network
     restart: unless-stopped
 
-  api:
-    build:
-      context: ../../
-      dockerfile: apps/api/Dockerfile
-    ports:
-      - 3333:3333
-    volumes:
-      - .:/usr/src/app/apps/api
-      - /usr/src/app/apps/api/node_modules
-    depends_on:
-      - mongo
-    networks:
-      - waiter-network
-    restart: unless-stopped
-    env_file:
-    - .env
+  # api:
+  #   build:
+  #     context: ../../
+  #     dockerfile: apps/api/Dockerfile
+  #   ports:
+  #     - 3333:3333
+  #   volumes:
+  #     - .:/usr/src/app/apps/api
+  #     - /usr/src/app/apps/api/node_modules
+  #   depends_on:
+  #     - mongo
+  #   networks:
+  #     - waiter-network
+  #   restart: unless-stopped
+  #   env_file:
+  #   - .env
 
 networks:
   waiter-network:

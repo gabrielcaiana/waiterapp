@@ -1,7 +1,15 @@
 {
   "name": "@waiterapp/models",
   "description": "This is a shared models package for the Waiter App",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "version": "0.0.0",
-  "author": "@gabrielcaiana"
+  "author": "@gabrielcaiana",
+  "scripts": {
+    "build": "pnpm tsc",
+    "dev": "pnpm tsc -w"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
 }

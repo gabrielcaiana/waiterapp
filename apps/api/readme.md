@@ -1,6 +1,16 @@
 # WaiterApp API 🚀
 
-API REST do sistema WaiterApp para gerenciamento de pedidos em restaurantes.
+API REST do sistema WaiterApp para gerenciamento de pedidos em restaurantes, desenvolvida como parte do treinamento full stack.
+
+## 🎯 Objetivos de Aprendizado
+
+- Desenvolvimento de APIs REST com Node.js e Express
+- Integração com banco de dados MongoDB
+- Gerenciamento de uploads com AWS S3
+- Containerização com Docker
+- Boas práticas de desenvolvimento e segurança
+- Integração com diferentes frameworks frontend (React e Vue.js)
+- Análise comparativa de complexidade entre frameworks
 
 ## 📋 Funcionalidades
 
@@ -8,14 +18,24 @@ API REST do sistema WaiterApp para gerenciamento de pedidos em restaurantes.
 - Gerenciamento de produtos
 - Gerenciamento de pedidos
 - Upload de imagens para AWS S3
+- Integração com múltiplas interfaces de usuário
 
 ## 🛠️ Tecnologias
 
+### Backend
 - Node.js
 - Express
 - MongoDB
 - AWS S3 (para armazenamento de imagens)
 - Docker
+
+### Frontend (Opções Disponíveis)
+- React.js
+  - Ideal para equipes com experiência em ecossistema React
+  - Recomendado para aplicações complexas com muitos estados
+- Vue.js
+  - Excelente para equipes que preferem uma curva de aprendizado mais suave
+  - Ótimo para aplicações que precisam de performance e simplicidade
 
 ## 🔧 Configuração
 
@@ -100,6 +120,28 @@ pnpm install
 ```bash
 pnpm run dev
 ```
+
+## 🔄 Escolha do Framework Frontend
+
+Este projeto suporta implementações tanto em React quanto em Vue.js, permitindo que as equipes escolham a stack mais adequada às suas necessidades. Considere os seguintes aspectos ao escolher o framework:
+
+### React.js
+- Maior ecossistema de componentes
+- Forte suporte da comunidade
+- Excelente para aplicações complexas
+- Integração nativa com TypeScript
+
+### Vue.js
+- Documentação abrangente e clara
+- Curva de aprendizado mais suave
+- Performance otimizada
+- Estrutura mais opinativa
+
+A escolha do framework pode ser baseada em:
+- Experiência prévia da equipe
+- Requisitos específicos do projeto
+- Necessidades de manutenção a longo prazo
+- Complexidade da aplicação
 
 ## 📝 Licença
 

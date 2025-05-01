@@ -1,114 +1,112 @@
 # WaiterApp 🍽️
 
-Um sistema completo para gerenciamento de pedidos em restaurantes, desenvolvido como um monorepo contendo aplicações web, mobile e API. Este projeto foi criado como material didático para treinamento de equipes full stack.
+Sistema completo para gerenciamento de pedidos em restaurantes, desenvolvido como parte do treinamento full stack.
 
-## 🎓 Sobre o Treinamento
+## 🎯 Sobre o Projeto
 
-Este projeto é utilizado como base para treinamento de equipes full stack, abordando:
+O WaiterApp é uma solução completa para restaurantes, permitindo o gerenciamento eficiente de pedidos, cardápios e serviços. O projeto é composto por três componentes principais:
 
-- Arquitetura de Monorepo com NX
-- Desenvolvimento Backend com Node.js
-- Desenvolvimento Frontend com React
-- Desenvolvimento Mobile com React Native
-- Integração com MongoDB
-- Containerização com Docker
-- CI/CD e Boas Práticas
+- **API REST**: Backend robusto desenvolvido com Node.js
+- **Dashboard Web**: Interface administrativa disponível em React.js ou Vue.js
+- **Mobile App**: Aplicativo para garçons feito com React Native
 
-## 📦 Estrutura do Projeto
+## 🛠️ Tecnologias
 
-Este projeto é organizado como um monorepo usando NX, contendo as seguintes aplicações:
+### Backend (API)
+- Node.js com Express
+- MongoDB
+- Docker
+- AWS S3
 
-- `apps/api`: Backend da aplicação desenvolvido em Node.js
-- `apps/web`: Interface web para gerenciamento (em desenvolvimento)
-- `apps/mobile`: Aplicativo mobile para garçons (em desenvolvimento)
-- `packages/models`: Pacote compartilhado com modelos de dados
+### Frontend (Opções)
 
-## 🛠️ Tecnologias Principais
+#### React.js
+- Ideal para equipes com experiência no ecossistema React
+- Recomendado para aplicações complexas
+- Maior ecossistema de componentes
 
-- **Gerenciamento de Monorepo**: NX
-- **Gerenciador de Pacotes**: pnpm
-- **Backend**: Node.js
-- **Banco de Dados**: MongoDB
-- **Containerização**: Docker
-- **Frontend**: React
-- **Mobile**: React Native
-- **Testes**: Jest
-- **Linting**: ESLint
-- **Formatação**: Prettier
+#### Vue.js
+- Excelente para equipes que preferem uma curva de aprendizado mais suave
+- Ótimo para aplicações que precisam de performance e simplicidade
+- Documentação abrangente
+
+### Mobile
+- React Native
 
 ## 🚀 Começando
 
 ### Pré-requisitos
 
-- Node.js
-- pnpm
+- Node.js 18+
 - Docker e Docker Compose
-- Git
+- pnpm (recomendado) ou npm
 
-### Instalação
+### Estrutura do Projeto
 
-1. Clone o repositório:
-```bash
-git clone [url-do-repositorio]
-cd waiterapp
 ```
-
-2. Instale as dependências:
-```bash
-pnpm install
+apps/
+  ├── api/          # Backend em Node.js
+  ├── web/          # Frontend (React.js ou Vue.js)
+  └── mobile/       # App mobile em React Native
 ```
-
-3. Configure as variáveis de ambiente:
-- Copie o arquivo `.env.sample` da API para `.env`
-- Configure as variáveis necessárias
 
 ### Executando o Projeto
 
-#### API
+#### API (Backend)
 
-Desenvolvimento:
-```bash
-pnpm run api:dev
-```
-
-Produção:
-```bash
-pnpm run api:build
-pnpm run api:start
-```
-
-#### Com Docker
-
-A API pode ser executada com Docker Compose:
 ```bash
 cd apps/api
 docker-compose up -d
 ```
 
+#### Web (Frontend)
+
+Escolha uma das implementações disponíveis:
+
+##### React.js
+```bash
+cd apps/web-react
+pnpm install
+pnpm run dev
+```
+
+##### Vue.js
+```bash
+cd apps/web-vue
+pnpm install
+pnpm run dev
+```
+
+#### Mobile
+```bash
+cd apps/mobile
+pnpm install
+pnpm start
+```
+
+## 🔄 Escolhendo o Framework Frontend
+
+Este projeto oferece implementações tanto em React quanto em Vue.js, permitindo que as equipes escolham a stack mais adequada às suas necessidades:
+
+### Quando escolher React.js
+- Equipe com experiência no ecossistema React
+- Projeto requer componentes complexos e gerenciamento de estado robusto
+- Necessidade de forte integração com TypeScript
+- Preferência por abordagem mais flexível
+
+### Quando escolher Vue.js
+- Equipe nova ou com preferência por framework mais estruturado
+- Prioridade em performance e simplicidade
+- Necessidade de documentação clara e abrangente
+- Preferência por abordagem mais opinativa
+
 ## 📚 Documentação
 
-- [Documentação da API](./apps/api/readme.md)
-- [Guia de Treinamento](./docs/training.md)
-- Documentação Web (em breve)
-- Documentação Mobile (em breve)
-
-## 🎯 Objetivos do Treinamento
-
-- Compreender a arquitetura de monorepo e suas vantagens
-- Aprender boas práticas de desenvolvimento full stack
-- Entender integração entre diferentes tecnologias
-- Desenvolver habilidades em containerização
-- Aprender a trabalhar com banco de dados NoSQL
-- Compreender o fluxo de desenvolvimento em equipe
-
-## 🤝 Contribuindo
-
-Contribuições são sempre bem-vindas! Por favor, leia as diretrizes de contribuição antes de submeter pull requests.
+- [API Documentation](apps/api/README.md)
+- [Web React Documentation](apps/web-react/README.md)
+- [Web Vue Documentation](apps/web-vue/README.md)
+- [Mobile Documentation](apps/mobile/README.md)
 
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## ✨ Autor
-
-[@gabrielcaiana](https://github.com/gabrielcaiana)

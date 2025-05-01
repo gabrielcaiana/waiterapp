@@ -30,8 +30,17 @@ O WaiterApp é uma solução completa para restaurantes, permitindo o gerenciame
 - Ótimo para aplicações que precisam de performance e simplicidade
 - Documentação abrangente
 
-### Mobile
-- React Native
+### Mobile (Opções)
+
+#### React Native
+- Framework multiplataforma mantido pelo Facebook/Meta
+- Ideal para equipes com experiência em React
+- Grande ecossistema de bibliotecas nativas
+
+#### Flutter
+- Framework multiplataforma do Google
+- Excelente performance e UI consistente
+- Curva de aprendizado suave com Dart
 
 ## 🚀 Começando
 
@@ -47,7 +56,7 @@ O WaiterApp é uma solução completa para restaurantes, permitindo o gerenciame
 apps/
   ├── api/          # Backend em Node.js
   ├── web/          # Frontend (React.js ou Vue.js)
-  └── mobile/       # App mobile em React Native
+  └── mobile/       # App mobile (React Native ou Flutter)
 ```
 
 ### Executando o Projeto
@@ -78,15 +87,24 @@ pnpm run dev
 ```
 
 #### Mobile
+
+##### React Native
 ```bash
-cd apps/mobile
+cd apps/mobile-react-native
 pnpm install
 pnpm start
 ```
 
-## 🔄 Escolhendo o Framework Frontend
+##### Flutter
+```bash
+cd apps/mobile-flutter
+flutter pub get
+flutter run
+```
 
-Este projeto oferece implementações tanto em React quanto em Vue.js, permitindo que as equipes escolham a stack mais adequada às suas necessidades:
+## 🔄 Escolhendo os Frameworks
+
+Este projeto oferece múltiplas implementações tanto para o frontend web quanto para o mobile, permitindo que as equipes escolham a stack mais adequada às suas necessidades:
 
 ### Quando escolher React.js
 - Equipe com experiência no ecossistema React
@@ -99,6 +117,18 @@ Este projeto oferece implementações tanto em React quanto em Vue.js, permitind
 - Prioridade em performance e simplicidade
 - Necessidade de documentação clara e abrangente
 - Preferência por abordagem mais opinativa
+
+### Quando escolher React Native
+- Equipe já familiarizada com React/React Native
+- Necessidade de reutilização de componentes web
+- Prioridade em integração nativa e APIs específicas da plataforma
+- Projeto requer grande quantidade de bibliotecas nativas
+
+### Quando escolher Flutter
+- Busca por performance nativa e UI consistente
+- Equipe interessada em aprender Dart
+- Necessidade de desenvolvimento rápido com hot reload
+- Prioridade em animações fluidas e UI personalizada
 
 ## 📚 Documentação
 

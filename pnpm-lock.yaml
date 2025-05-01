@@ -50,13 +50,10 @@ importers:
         version: 22.15.2
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.31.0
-        version: 8.31.0(@typescript-eslint/parser@8.31.0)(eslint@9.25.1)(typescript@5.8.3)
+        version: 8.31.0(@typescript-eslint/parser@8.31.0(eslint@9.25.1)(typescript@5.8.3))(eslint@9.25.1)(typescript@5.8.3)
       '@typescript-eslint/parser':
         specifier: ^8.31.0
         version: 8.31.0(eslint@9.25.1)(typescript@5.8.3)
-      '@waiterapp/models':
-        specifier: workspace:*
-        version: link:../../packages/models
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
@@ -82,7 +79,11 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
 
-  packages/models: {}
+  packages/models:
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.8.3
 
 packages:
 
@@ -3233,7 +3234,7 @@ snapshots:
     dependencies:
       '@types/webidl-conversions': 7.0.3
 
-  '@typescript-eslint/eslint-plugin@8.31.0(@typescript-eslint/parser@8.31.0)(eslint@9.25.1)(typescript@5.8.3)':
+  '@typescript-eslint/eslint-plugin@8.31.0(@typescript-eslint/parser@8.31.0(eslint@9.25.1)(typescript@5.8.3))(eslint@9.25.1)(typescript@5.8.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.1
       '@typescript-eslint/parser': 8.31.0(eslint@9.25.1)(typescript@5.8.3)

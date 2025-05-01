@@ -1,1 +1,1 @@
-export * from './items.ts'
+export * from './items'

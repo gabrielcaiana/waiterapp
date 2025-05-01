@@ -29,7 +29,7 @@ services:
       - waiter-network
     restart: unless-stopped
     env_file:
-    - .env
+      - .env
 
 networks:
   waiter-network:

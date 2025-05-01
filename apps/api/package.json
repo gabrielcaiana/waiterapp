@@ -13,7 +13,7 @@
     "compose": "docker-compose up",
     "compose:down": "docker-compose down",
     "compose:build": "docker-compose up build -d",
-    "docker:build": "docker build -t waiterapp .",
+    "docker:logs": "docker-compose logs -f api",
     "docker:run": "docker run -p 3333:3333 -d waiterapp-api"
   },
   "keywords": [],

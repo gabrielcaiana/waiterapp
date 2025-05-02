@@ -37,7 +37,7 @@
       "stylelint --fix",
       "prettier --write"
     ],
-    "apps/api/**/*.{ts}": [
+    "apps/api/**/*.ts": [
       "nx lint @waiterapp/api --fix",
       "nx check-types @waiterapp/api"
     ]

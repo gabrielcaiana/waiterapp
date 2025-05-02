@@ -12,7 +12,8 @@
     "nx:graph": "nx graph",
     "docker:clean": "docker system prune -a --volumes -f",
     "docker:clean:safe": "docker system prune -a --volumes",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint:commit": "commitlint --edit"
   },
   "author": "@gabrielcaiana",
   "devDependencies": {
@@ -28,13 +29,17 @@
   },
   "packageManager": "pnpm@8.10.0+sha512.9c2cb83f2b6cf6a25d8c58300bf99197c7ef3be84cf3e766f29054b40b83b42f8aaba6fcc314a9ecf27c00f7ce80a757bb4c608800e7adbe2d29dc5c7056f5be",
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+    "apps/web/**/*.{ts,tsx}": [
+      "nx lint @waiterapp/web --fix",
+      "nx check-types @waiterapp/web"
     ],
-    "*.{css,scss}": [
+    "apps/web/**/*.{css,scss}": [
       "stylelint --fix",
       "prettier --write"
+    ],
+    "apps/api/**/*.{ts}": [
+      "nx lint @waiterapp/api --fix",
+      "nx check-types @waiterapp/api"
     ]
   }
 }

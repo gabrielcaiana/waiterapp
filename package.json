@@ -6,6 +6,9 @@
     "api:build": "nx build @waiterapp/api",
     "api:start": "nx serve @waiterapp/api",
     "api:dev": "nx dev @waiterapp/api --watch",
+    "web:build": "nx build @waiterapp/web",
+    "web:preview": "nx preview @waiterapp/web",
+    "web:dev": "nx dev @waiterapp/web",
     "nx:graph": "nx graph",
     "docker:clean": "docker system prune -a --volumes -f",
     "docker:clean:safe": "docker system prune -a --volumes"

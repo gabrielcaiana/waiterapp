@@ -11,12 +11,30 @@
     "web:dev": "nx dev @waiterapp/web",
     "nx:graph": "nx graph",
     "docker:clean": "docker system prune -a --volumes -f",
-    "docker:clean:safe": "docker system prune -a --volumes"
+    "docker:clean:safe": "docker system prune -a --volumes",
+    "prepare": "husky"
   },
   "author": "@gabrielcaiana",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
     "nx": "^20.8.1",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-order": "^7.0.0"
   },
-  "packageManager": "pnpm@8.10.0+sha512.9c2cb83f2b6cf6a25d8c58300bf99197c7ef3be84cf3e766f29054b40b83b42f8aaba6fcc314a9ecf27c00f7ce80a757bb4c608800e7adbe2d29dc5c7056f5be"
+  "packageManager": "pnpm@8.10.0+sha512.9c2cb83f2b6cf6a25d8c58300bf99197c7ef3be84cf3e766f29054b40b83b42f8aaba6fcc314a9ecf27c00f7ce80a757bb4c608800e7adbe2d29dc5c7056f5be",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
 }
